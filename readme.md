@@ -98,7 +98,33 @@ $ git stash list
 //Para recuperar um stash 
 $ git stash pop [nome do stash]
 ```
+**Mesclar duas branches(merge)**
 
+Para mesclar as alterações de duas branchs, ou seja, incorporar uma branch alternativa na principal, pode realizar o seguinte comando:
+
+```git merge
+//Para salvar as alterações sem os arquivos não rastrados
+$ git merge [nome_da_branch]
+```
+**Clonar um repositório remoto em um repositório local**
+
+É possível fazer uma cópia de um repositório remoto em sua máquina local, com o download de todas as atualizações (commits) referentes ao repositório remoto:
+
+```git clone
+$ git clone
+```
+**Enviar as alterações para o repositório remoto**
+
+Após o commit, é comum enviar as alterações para o repositório remoto, para que faça parte das alterações  não só do repositório local. Para isso é utilizado o seguinte comando:
+```git push
+$ git push -u origin [repositorio_local]
+```
+**Baixar alterações de um repositório remoto**
+
+Na maioria das vezes outras pessoas estão trabalhando no mesmo repositório remoto e sobem algumas alterações. Então, se faz necessário que você atualize o seu repositório local com as alterações feitas no repositório remoto antes de subir suas próprias alterações. Para isso pode-se utilizar o seguinte comando:
+```git pull
+$ git pull
+```
 
 ## Referências
 
