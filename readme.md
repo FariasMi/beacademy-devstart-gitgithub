@@ -39,9 +39,69 @@ Ao tornar um arquivo rastreável, é possível desfazer a ação, ou seja, retir
 ```git rm 
 $ git rm --cached <nome do arquivo>
 ```
+**Criando ramificações(branches)**
+
+Em um mesmo repositório, é possível criar ramificações(branches) dentro do workflow, ou seja, criar subfluxos capazes de serem trabalhados paralelamente sem um afetar o outro diretamente, até que sejam unificados:
+
+```git branch
+//Consulta todas as branches criadas no repositório
+$ git branch
+
+//Cria uma nova branch
+$ git branch <nome_da_branch>
+```
+
+**Trocando de branch**
+
+Assim como é possível a criação de inumeras branches dentro de um mesmo workflow, é possível também navegar entre elas:
+
+```git checkout
+//Trocar de branch
+$ git checkout <nome_da_branch>
+
+//Cria uma branch e torná-la a branch atual
+$ git checkout -b <nome_da_branch>
+```
+
+**Removendo uma branch**
+
+É possível também remover a branch do repositório:
+```git branch -d
+$ git branch -d <nome_da_branch>
+```
 **Gravar alterações realizadas no workflow**
 
 Para que seja possível gravar as alterações realizadas no workflow de versionamento do github, gerar logs de alteração e "preparar" as alterações para serem incluídas no repositório remoto, é necessário executar o seguinte comando:
 ```git commit
 $ git commit -m "uma descrição sucinta e clara sobre as alterações realizadas"
 ```
+
+**Consultar os commits realizados no repositório**
+
+Para consultar os commits realizados no repositório:
+```git log
+$ git log
+```
+**Salvando as alterações no workflow antes do commit**
+
+Com o stash, é possível salvar as alterações no workflow, que já foram rastreadas, temporariamente, para poder trabalhar em outras ramificações, por exemplo. Esta funcionalidade não substitui o commit e pode ser utilizadas em momentos que se é necessário alterar um subfluxo de trabalho (branch), sem perder a atual:
+```git stash
+//Para incluir arquivos não rastreados
+$ git stash --include-untracked
+
+//Para salvar as alterações sem os arquivos não rastrados
+$ git stash
+
+//Para listar todos os "stashs" feitos no repositório
+$ git stash list
+
+//Para recuperar um stash 
+$ git stash pop [nome do stash]
+```
+
+
+## Referências
+
+ - [Pra entender o workflow do git](https://github.com/PauloGoncalvesBH/treinamento-git)
+ - [Documentação git](https://git-scm.com/docs/git-branch)
+ - [Treinamento Be academy](https://www.beacademy.com.br/)
